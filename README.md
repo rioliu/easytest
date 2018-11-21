@@ -1,6 +1,7 @@
 # easytest
 
-This project is a quick start framework to develop automation test project. especially for REST and Selenium Tests.
+This project is a quick start framework to develop automation test project. especially for REST and Selenium Tests. 
+More design please check this article https://www.linkedin.com/pulse/common-design-automation-test-rio-liu/
 
 - com.rioliu.test.config.TestContext.java
 
