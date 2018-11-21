@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Sample Test]">
+  <listeners>
+    <listener class-name="com.rioliu.test.reporting.ExtentReportListener"/>
+    <listener class-name="com.rioliu.test.base.AbstractTestBase"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Sample Test1(failed)">
+    <classes>
+      <class name="com.rioliu.test.WebDriverTest">
+        <methods>
+          <include name="testWebDriver"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.rioliu.test.WebDriverTest -->
+    </classes>
+  </test> <!-- Sample Test1(failed) -->
+</suite> <!-- Failed suite [Sample Test] -->
