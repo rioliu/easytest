@@ -25,7 +25,7 @@ e.g.
  
  - com.rioliu.test.selenium
  
- this page contains few Selenium Utitlites. 
+ this package contains few Selenium Utitlites. 
 
   ~ BasePageObject : if you develop your WebUI test with POM model, you can use this base class to create your PageObject, it provides some basic methods to implement your test case quickly
  
