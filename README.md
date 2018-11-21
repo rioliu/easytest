@@ -91,7 +91,7 @@ this package has a helper class to help you do some configuration for RestAssure
         given().get("https://api.publicapis.org/entries?category=animals&https=true").then()
                 .body("entries.API", hasItem("Cats"));
                 
-- Relase to local nexus repository
+- Deploy project to local Nexus repository
         
 Start Nexus server with default setting.
 
@@ -122,7 +122,7 @@ Now you can add local nexus repository and dependency to your project's pom.xml
 		</repository>
 	</repositories>
         <dependencies>
-                <groupId>com.rioliu</groupId>
+		<groupId>com.rioliu</groupId>
 		<artifactId>test</artifactId>
 		<version>1.0</version>
         </dependencies>
