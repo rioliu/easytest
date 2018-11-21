@@ -8,7 +8,7 @@ This class can help you to load test properties from Env/System and Property fil
 
 e.g. 
 
-        TestContext tc = new TestContext();
+        TestContext tc = TestContext.get();
         try {
             PropertiesConfiguration pc =
                     tc.loadPropertiesFromFile(
