@@ -91,13 +91,15 @@ this package provides a way to integrate your test with popular Reporting Framew
 
  ![alt text](https://user-images.githubusercontent.com/3387962/48819571-93c1f880-ed8b-11e8-9e4c-3233f9c11b82.jpg)
 
-- com.rioliu.test.rest
+## Rest API Helper
+
+*- com.rioliu.test.rest*
 
 this package has a helper class to help you do some configuration for RestAssured Framework.
 
         RestClientConfigHelper.get().useRelaxedHTTPSValidation("TLSv1.2");
         
-- Verify Simple REST API TEST
+*- Verify Simple REST API TEST*
 
         given().get("https://api.publicapis.org/entries?category=animals&https=true").then()
                 .body("entries.API", hasItem("Cats"));
