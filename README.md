@@ -85,4 +85,8 @@ this package provides a way to integrate your test with popular Reporting Framew
 this package has a helper class to help you do some configuration for RestAssured Framework.
 
         RestClientConfigHelper.get().useRelaxedHTTPSValidation("TLSv1.2");
+        
+- Verify Simple REST API TEST
 
+        given().get("https://api.publicapis.org/entries?category=animals&https=true").then()
+                .body("entries.API", hasItem("Cats"));
