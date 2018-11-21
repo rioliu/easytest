@@ -78,6 +78,8 @@ All the loggers implemeented same Logger interface, you can use LoggerFactory.ja
 
 this package provides a way to integrate your test with popular Reporting Framework ExtentReports. it can proivde a beautiful web based report.
 
+ ![alt text](https://user-images.githubusercontent.com/3387962/48819571-93c1f880-ed8b-11e8-9e4c-3233f9c11b82.jpg)
+
 - com.rioliu.test.rest
 
 this package has a helper class to help you do some configuration for RestAssured Framework.
