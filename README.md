@@ -23,6 +23,15 @@ e.g.
  
  This is a testNG base class, you can develop your test case base on it. it is inherited from org.testng.TestListenerAdapter, help you to do logging for test events like start/stop/skip/failure. Also it can help to initialize Selenium WebDrivers (firefox/chrome) with default/customized Options. you don't need to care about the WebDriver destory, all the drivers will be closed/quit when the test is finished, and when the WebUI test is failed, screenshot will be taken automatically.
  
+        WebDriver firefox = firefox();
+        WebDriver chrome = chrome();
+
+        firefox.get("https://www.whatsmybrowser.org/");
+        chrome.get("https://www.whatsmybrowser.org/");
+
+        takeScreenshot(firefox, "home_page_ff.png", "open home page");
+        takeScreenshot(chrome, "home_page_chrome.png", "open home page");
+ 
  - com.rioliu.test.selenium
  
  this package contains few Selenium Utitlites. 
