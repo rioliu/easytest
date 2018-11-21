@@ -57,9 +57,13 @@ e.g.
     
 - com.rioliu.test.logging
 
-this package provides advanced logging functionalities. Common logging requirement in test is: loging in 'Console', 'Report', 'Both'
+this package provides advanced logging functionalities. Common logging requirement in test is: loging in 'Console', 'Report', 'Both' 
 
-you can use LoggerFactory.java to create ConsoleLogger and CompositeLogger (logging message in both Report and Console)
+All the loggers implemeented same Logger interface, you can use LoggerFactory.java to create ConsoleLogger and CompositeLogger (logging message in both Report and Console)
+
+        private static Logger logger = LoggerFactory.getCompositeLogger(RESTAPITest.class);
+        
+        logger.info("Hello World");
 
 - com.rioliu.test.reporting
 
@@ -68,4 +72,6 @@ this package provides a way to integrate your test with popular Reporting Framew
 - com.rioliu.test.rest
 
 this package has a helper class to help you do some configuration for RestAssured Framework.
+
+        RestClientConfigHelper.get().useRelaxedHTTPSValidation("TLSv1.2");
 
