@@ -90,3 +90,39 @@ this package has a helper class to help you do some configuration for RestAssure
 
         given().get("https://api.publicapis.org/entries?category=animals&https=true").then()
                 .body("entries.API", hasItem("Cats"));
+                
+- Relase to local nexus repository
+        
+Start Nexus server with default setting.
+
+        docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+        
+Now you can access the nexus server with url http://localhost:8081/nexus with admin:admin123
+
+Clone this repo to your local disk
+
+        git clone https://github.com/rioliu/easytest/
+        
+Build this project
+
+        cd easytest
+        mvn clean install
+        
+Upload artifact to Nexus server
+
+        curl -v -u 'admin:admin123' --upload-file pom.xml http://localhost:8081/nexus/content/repositories/releases/com/rioliu/test/1.0/test-1.0.pom
+        curl -v -u 'admin:admin123' --upload-file target/test-1.0.jar http://localhost:8081/nexus/content/repositories/releases/com/rioliu/test/1.0/test-1.0.jar
+
+Now you can add local nexus repository and dependency to your project's pom.xml
+
+        <repositories>
+		<repository>
+			<id>nexus</id>
+			<url>http://localhost:8081/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
+        <dependencies>
+                <groupId>com.rioliu</groupId>
+		<artifactId>test</artifactId>
+		<version>1.0</version>
+        </dependencies>
