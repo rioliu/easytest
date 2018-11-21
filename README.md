@@ -126,3 +126,5 @@ Now you can add local nexus repository and dependency to your project's pom.xml
 		<artifactId>test</artifactId>
 		<version>1.0</version>
         </dependencies>
+
+Another option, you can clone this project to your local and change package name to your org/com then start to develop, That's fine.
