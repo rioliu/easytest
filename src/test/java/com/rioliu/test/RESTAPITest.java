@@ -12,6 +12,9 @@ import com.rioliu.test.logging.Logger;
 import com.rioliu.test.logging.LoggerFactory;
 import com.rioliu.test.rest.RestClientConfigHelper;
 
+/**
+ * Created by rioliu on Nov 21, 2018
+ */
 public class RESTAPITest extends AbstractTestBase {
     
     private static Logger logger = LoggerFactory.getCompositeLogger(RESTAPITest.class);

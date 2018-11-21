@@ -12,6 +12,9 @@ import org.testng.annotations.Test;
 import com.rioliu.test.base.AbstractTestBase;
 import com.rioliu.test.selenium.BasePageObject;
 
+/**
+ * Created by rioliu on Nov 21, 2018
+ */
 public class WebDriverTest extends AbstractTestBase {
 
 
