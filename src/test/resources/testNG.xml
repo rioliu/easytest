@@ -9,7 +9,7 @@
     <test name="Sample Test1" preserve-order="true">
         <classes>
             <!-- <class name="com.rioliu.test.RESTfulAPITest"/> -->
-            <class name="com.rioliu.test.WebDriverTest"/>
+            <!-- <class name="com.rioliu.test.WebDriverTest"/> -->
         </classes>
     </test>
     
