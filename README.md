@@ -75,7 +75,7 @@ e.g.
 
 *- com.rioliu.test.logging*
 
-this package provides advanced logging functionalities. Common logging requirement in test is: loging in 'Console', 'Report', 'Both' 
+this package provides advanced logging functionalities. Common logging requirement in test is: add log entry in 'Console', 'Report' or 'Both' 
 
 All the loggers implemeented same Logger interface, you can use LoggerFactory.java to create ConsoleLogger and CompositeLogger (logging message in both Report and Console)
 
