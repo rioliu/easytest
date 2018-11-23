@@ -135,7 +135,7 @@ Now you can add local nexus repository and dependency to your project's pom.xml
 			<id>nexus</id>
 			<url>http://localhost:8081/nexus/content/repositories/releases</url>
 		</repository>
-	</repositories>
+	    </repositories>
         <dependencies>
 		<groupId>com.rioliu</groupId>
 		<artifactId>test</artifactId>
