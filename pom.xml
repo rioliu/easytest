@@ -65,6 +65,11 @@
 			<artifactId>slf4j-ext</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		<dependency>
+			<groupId>com.jcabi</groupId>
+			<artifactId>jcabi-ssh</artifactId>
+			<version>1.6.1</version>
+		</dependency>
 	</dependencies>
 
 	<repositories>
