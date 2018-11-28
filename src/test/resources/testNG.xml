@@ -11,6 +11,7 @@
             <!-- <class name="com.rioliu.test.RESTfulAPITest"/> -->
             <!-- <class name="com.rioliu.test.WebDriverTest"/> -->
             <!-- <class name="com.rioliu.test.SSHClientTest"/> -->
+            <!-- <class name="com.rioliu.test.DatabaseTest"/> -->
         </classes>
     </test>
     
