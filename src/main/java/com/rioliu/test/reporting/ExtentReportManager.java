@@ -61,6 +61,8 @@ public class ExtentReportManager {
             htmlReporter.config().setChartVisibilityOnOpen(true);
             htmlReporter.config().setTheme(Theme.STANDARD);
             htmlReporter.config().setEncoding("utf-8");
+            htmlReporter.config().setReportName(
+                    System.getProperty("extent.report.name", "Automation Test Report"));
 
             extent = new ExtentReports();
             extent.attachReporter(htmlReporter);
@@ -92,8 +94,6 @@ public class ExtentReportManager {
     }
 
     private ExtentReportManager() {}
-
-
 
 
 }
