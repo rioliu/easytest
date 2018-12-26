@@ -15,7 +15,12 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
  */
 public class TestContext {
 
+
     private static TestContext tc;
+
+    private SystemConfiguration sc;
+    private EnvironmentConfiguration ec;
+
     public synchronized static TestContext get() {
 
         if (tc == null) {
@@ -24,24 +29,6 @@ public class TestContext {
 
         return tc;
     }
-
-    public static void main(String[] args) {
-
-        TestContext tc = new TestContext();
-        try {
-            PropertiesConfiguration pc =
-                    tc.loadPropertiesFromFile(
-                            "src/test/resources/test.properties");
-
-            System.out.println(pc.getString("version"));
-        } catch (ConfigurationException e) {
-            e.printStackTrace();
-        }
-    }
-
-    SystemConfiguration sc;
-
-    EnvironmentConfiguration ec;
 
     private TestContext() {
         sc = new SystemConfiguration();
