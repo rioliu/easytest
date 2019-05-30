@@ -6,6 +6,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.ResourceCDN;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
@@ -57,6 +58,7 @@ public class ExtentReportManager {
 
 
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(filePath);
+            htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
             htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
             htmlReporter.config().setChartVisibilityOnOpen(true);
             htmlReporter.config().setTheme(Theme.STANDARD);
