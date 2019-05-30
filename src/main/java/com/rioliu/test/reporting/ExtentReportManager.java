@@ -1,7 +1,10 @@
 package com.rioliu.test.reporting;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -26,9 +29,10 @@ public class ExtentReportManager {
             new ConcurrentHashMap<Long, ExtentTest>();
     private static ConcurrentHashMap<String, ExtentTest> parentLoggers =
             new ConcurrentHashMap<String, ExtentTest>();
+
     public synchronized static ExtentTest createNode(String parentTestName,
-            String testName) {
-        
+                                                     String testName) {
+
         ExtentTest parent = parentLoggers.get(parentTestName);
         ExtentTest child = parent.createNode(testName);
         loggers.put(Thread.currentThread().getId(), child);
@@ -56,6 +60,15 @@ public class ExtentReportManager {
                 filePath = DFAULT_FILE_PATH;
             }
 
+            File reportFile = new File(filePath);
+            if (!reportFile.exists()) {
+                try {
+                    FileUtils.forceMkdirParent(reportFile);
+                } catch (IOException e) {
+                    throw new RuntimeException("create parent dir of report file failed", e);
+                }
+            }
+
 
             ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(filePath);
             htmlReporter.config().setResourceCDN(ResourceCDN.EXTENTREPORTS);
@@ -80,8 +93,8 @@ public class ExtentReportManager {
     }
 
     public synchronized static ExtentTest startTest(ExtentReports reporter,
-            String testName,
-            String description) {
+                                                    String testName,
+                                                    String description) {
 
         if (StringUtils.isEmpty(testName)) {
             reporter = getReporter(null);
@@ -95,7 +108,8 @@ public class ExtentReportManager {
         return test;
     }
 
-    private ExtentReportManager() {}
+    private ExtentReportManager() {
+    }
 
 
 }
