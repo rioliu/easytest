@@ -1,0 +1,12 @@
+FROM centos
+# install required softwares
+RUN yum install -y java-1.8.0* git wget unzip
+ENV JAVA_HOME=/etc/alternatives/jre_1.8.0_openjdk
+# install maven 3.6.1
+RUN wget http://apache.saix.net/maven/maven-3/3.6.1/binaries/apache-maven-3.6.1-bin.zip 
+RUN unzip apache-maven-3.6.1-bin.zip
+RUN ln -s /apache-maven-3.6.1/bin/mvn /usr/bin/mvn
+RUN ln -s /apache-maven-3.6.1/bin/mvnDebug /usr/bin/mvnDebug
+RUN git clone https://github.com/rioliu/easytest.git
+WORKDIR /easytest
+CMD mvn test
