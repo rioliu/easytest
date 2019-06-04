@@ -142,4 +142,10 @@ Now you can add local nexus repository and dependency to your project's pom.xml
 		<version>1.0</version>
         </dependencies>
 
+- Docker image
+	
+Get image from docker hub and trigger the test
+
+		docker run -it --name easytest rioliu/easytest:v2
+
 Another option, you can clone this project to your local and change package name to your org/com then start to develop, That's fine.
