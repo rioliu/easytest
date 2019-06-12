@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Sample Test">
+<suite name="SampleTest">
   <listeners>
     <listener class-name="com.rioliu.test.reporting.ExtentReportListener"/>
     <listener class-name="com.rioliu.test.base.AbstractTestBase"/>
   </listeners>
 
-  <test name="Sample Test1" preserve-order="true">
+  <test name="SampleTest1" preserve-order="true">
     <classes>
-      <class name="com.rioliu.test.RESTAPITest"/>
-<!--      <class name="com.rioliu.test.WebDriverTest"/>-->
+<!--      <class name="com.rioliu.test.RESTAPITest"/>-->
+      <class name="com.rioliu.test.WebDriverTest"/>
       <!-- <class name="com.rioliu.test.SSHClientTest"/> -->
       <!-- <class name="com.rioliu.test.DatabaseTest"/> -->
     </classes>

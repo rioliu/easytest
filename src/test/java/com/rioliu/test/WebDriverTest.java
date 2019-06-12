@@ -49,10 +49,10 @@ public class WebDriverTest extends AbstractTestBase {
 
         // initialized webdriver properties
         System.setProperty("webdriver.chrome.driver",
-                "/Users/rioliu/Development/apps/webdriver/chromedriver");
+                "/Users/rioliu/Dev/apps/webdriver/chromedriver");
 
         System.setProperty("webdriver.gecko.driver",
-                "/Users/rioliu/Development/apps/webdriver/geckodriver");
+                "/Users/rioliu/Dev/apps/webdriver/geckodriver");
     }
 
     @Test
