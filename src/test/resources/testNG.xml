@@ -8,8 +8,8 @@
 
   <test name="SampleTest1" preserve-order="true">
     <classes>
-<!--      <class name="com.rioliu.test.RESTAPITest"/>-->
-      <class name="com.rioliu.test.WebDriverTest"/>
+      <class name="com.rioliu.test.RESTAPITest"/>
+<!--      <class name="com.rioliu.test.WebDriverTest"/>-->
       <!-- <class name="com.rioliu.test.SSHClientTest"/> -->
       <!-- <class name="com.rioliu.test.DatabaseTest"/> -->
     </classes>
