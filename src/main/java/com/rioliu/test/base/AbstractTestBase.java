@@ -114,9 +114,9 @@ public class AbstractTestBase extends TestListenerAdapter {
                 tr.getThrowable());;
 
         // take screenshot and add the file to report
-        ArrayList<WebDriver> list = (ArrayList<WebDriver>) tr.getAttribute(ATTR_DRIVER);
-        if (list != null) {
-            for (WebDriver driver : list) {
+        ArrayList<WebDriver> driverList = (ArrayList<WebDriver>) tr.getAttribute(ATTR_DRIVER);
+        if (driverList != null) {
+            for (WebDriver driver : driverList) {
                 takeScreenshot(driver, null, null, true);
                 unusedDrivers.add(driver);
             }
@@ -142,9 +142,9 @@ public class AbstractTestBase extends TestListenerAdapter {
         
         logger.getConsoleLogger().info("TEST " + tr.getMethod().getMethodName() + " is SUCCESS");
 
-        ArrayList<WebDriver> stack = (ArrayList<WebDriver>) tr.getAttribute(ATTR_DRIVER);
-        if (stack != null) {
-            for (WebDriver driver : stack) {
+        ArrayList<WebDriver> driverList = (ArrayList<WebDriver>) tr.getAttribute(ATTR_DRIVER);
+        if (driverList != null) {
+            for (WebDriver driver : driverList) {
                 unusedDrivers.add(driver);
             }
         }
@@ -156,13 +156,20 @@ public class AbstractTestBase extends TestListenerAdapter {
     private void pushDriverToStack(WebDriver driver) {
         ITestResult result = Reporter.getCurrentTestResult();
         Object drivers = result.getAttribute(ATTR_DRIVER);
-        if (drivers == null) {
-            ArrayList<WebDriver> list = new ArrayList<>();
-            list.add(driver);
-            result.setAttribute(ATTR_DRIVER, list);
-        } else {
-            ((ArrayList<WebDriver>) drivers).add(driver);
+        // if driver init method is called in different thread, the operation should be synced.
+        synchronized (drivers) {
+            if (drivers == null) {
+                ArrayList<WebDriver> list = new ArrayList<>();
+                list.add(driver);
+                result.setAttribute(ATTR_DRIVER, list);
+            } else {
+                ArrayList<WebDriver> driverList = (ArrayList<WebDriver>) drivers;
+                if (!driverList.contains(driver)) {
+                    driverList.add(driver);
+                }
+            }
         }
+
     }
 
     protected void setDefaultChromeOptions(ChromeOptions options) {
