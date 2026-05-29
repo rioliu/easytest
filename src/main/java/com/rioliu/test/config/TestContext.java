@@ -13,6 +13,7 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 import org.apache.commons.lang3.StringUtils;
 import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.constructor.Constructor;
+import org.yaml.snakeyaml.LoaderOptions;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -79,7 +80,7 @@ public class TestContext {
 
     public <T> T loadYamlConfigObjectFromFile(Class<T> clazz, String path) throws FileNotFoundException {
 
-        Yaml yaml = new Yaml(new Constructor(clazz));
+        Yaml yaml = new Yaml(new Constructor(clazz, new LoaderOptions()));
         return yaml.load(new FileInputStream(path));
     }
 
