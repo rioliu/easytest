@@ -110,7 +110,7 @@ this package has a helper class to help you do some configuration for RestAssure
         
 Start Nexus server with default setting.
 
-        docker run -d -p 8081:8081 --name nexus sonatype/nexus:oss
+        podman run -d -p 8081:8081 --name nexus sonatype/nexus:oss
         
 Now you can access the nexus server with url http://localhost:8081/nexus with admin:admin123
 
@@ -142,10 +142,12 @@ Now you can add local nexus repository and dependency to your project's pom.xml
 		<version>1.0</version>
         </dependencies>
 
-- Docker image
+- Container image
 	
-Get image from docker hub and trigger the test
+Get image from a container registry and trigger the test
 
-		docker run -it --name easytest rioliu/easytest:v2
+		podman run -it --name easytest rioliu/easytest:v2
 
 Another option, you can clone this project to your local and change package name to your org/com then start to develop, That's fine.
+
+> **No local JDK/Maven required** — builds can run inside a container via Podman. See the `Makefile` for `make build`, `make test`, and `make clean` targets.
