@@ -6,7 +6,6 @@ import java.time.temporal.ChronoUnit;
 import org.hamcrest.MatcherAssert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.rioliu.test.base.AbstractTestBase;
@@ -42,17 +41,6 @@ public class WebDriverTest extends AbstractTestBase {
             return driver.getPageSource().contains(expectedString);
         }
 
-    }
-
-    @BeforeTest
-    public void beforeTest() {
-
-        // initialized webdriver properties
-        System.setProperty("webdriver.chrome.driver",
-                "/Users/rioliu/Dev/apps/webdriver/chromedriver");
-
-        System.setProperty("webdriver.gecko.driver",
-                "/Users/rioliu/Dev/apps/webdriver/geckodriver");
     }
 
     @Test
